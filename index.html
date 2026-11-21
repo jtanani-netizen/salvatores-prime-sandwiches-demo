@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Salvatore's Prime Sandwiches — Italian Deli, College Park Orlando</title>
+<meta name="description" content="Salvatore's Prime Sandwiches is an Italian-American deli in College Park, Orlando — Boar's Head meats and cheeses sliced to order at 1520 Edgewater Dr Ste J. Classic Italian, London Broil, Tuscany, Pizza Sub. Find them on Facebook.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#fdf8ee; --bg2:#f6ecd7; --card:#fffdf6; --ink:#26221b; --ink2:#57493a;
+  --muted:#96836c; --line:#ead9ba; --line2:#d9bd8a;
+  --red:#b3312a; --red2:#932720; --green:#1e5c40; --green2:#174a34; --gold:#c9922e;
+  --shadow:0 20px 45px rgba(38,34,27,.14);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55;overflow-x:clip}
+img{max-width:100%;display:block}
+h1,h2,h3,.disp{font-family:'DM Serif Display',serif;font-weight:400}
+.wrap{width:min(1180px,100% - 40px);margin-inline:auto}
+.demo-ribbon{background:var(--green2);color:#f3e8cf;text-align:center;font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;padding:.45rem 1rem}
+.demo-ribbon b{color:#f0c569}
+header.site{position:sticky;top:0;z-index:60;background:rgba(253,248,238,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.hd{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.6rem 0}
+.logo{display:flex;align-items:center;gap:.7rem;text-decoration:none;color:var(--ink);min-width:0}
+.logo-mark{width:46px;height:46px;border-radius:12px;background:var(--red);color:#fff;display:grid;place-items:center;font-family:'DM Serif Display',serif;font-size:1.45rem;flex:none;border:2px solid var(--gold)}
+.logo b{font-family:'DM Serif Display',serif;font-size:1.28rem;display:block;line-height:1;white-space:nowrap}
+.logo small{font-size:.56rem;letter-spacing:.22em;text-transform:uppercase;color:var(--green);font-weight:800}
+nav.main{display:flex;gap:1.7rem}
+nav.main a{color:var(--ink2);text-decoration:none;font-weight:700;font-size:.93rem}
+nav.main a:hover{color:var(--red2)}
+.hd-actions{display:flex;align-items:center;gap:.6rem;flex:none}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;border:none;cursor:pointer;font:inherit;font-weight:800;border-radius:999px;padding:.7rem 1.35rem;text-decoration:none;transition:.2s;font-size:.95rem}
+.btn-red{background:var(--red);color:#fff}
+.btn-red:hover{background:var(--red2)}
+.btn-green{background:var(--green);color:#fff}
+.btn-green:hover{background:var(--green2)}
+.btn-ghost{background:transparent;color:var(--ink);border:1.5px solid var(--line2)}
+.btn-ghost:hover{border-color:var(--red);color:var(--red2)}
+.cart-btn{position:relative;background:var(--ink);color:#f6ecd7;border:none;border-radius:999px;padding:.62rem 1.05rem;font:inherit;font-weight:800;cursor:pointer;display:inline-flex;gap:.5rem;align-items:center}
+.cart-count{background:var(--red);color:#fff;border-radius:999px;min-width:22px;height:22px;display:grid;place-items:center;font-size:.78rem;padding:0 5px;font-weight:800}
+.hero{position:relative;min-height:92svh;display:flex;align-items:flex-end;color:#fff;isolation:isolate;overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:-2}
+.hero-bg img{width:100%;height:100%;object-fit:cover}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(24,18,8,.52) 0%,rgba(24,18,8,.16) 38%,rgba(24,18,8,.64) 68%,rgba(18,12,4,.95) 100%)}
+.hero-in{padding-top:7rem;padding-bottom:3.4rem}
+.hero .kicker{color:#f0c569;font-weight:800;letter-spacing:.3em;text-transform:uppercase;font-size:.78rem}
+.hero h1{font-size:clamp(2.7rem,7.5vw,5rem);line-height:1.03;max-width:15ch;margin:.55rem 0 .9rem;text-shadow:0 4px 30px rgba(0,0,0,.4)}
+.hero h1 em{font-style:italic;color:#f0c569}
+.hero p{max-width:56ch;font-size:clamp(1.02rem,1.7vw,1.2rem);color:#fdf3e0}
+.hero-cta{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.5rem}
+.hero-badges{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.1rem}
+.hbadge{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.32);backdrop-filter:blur(6px);border-radius:999px;padding:.35rem .85rem;font-size:.82rem;font-weight:700}
+.marquee{background:var(--red);color:#ffe9d6;overflow:hidden;padding:.6rem 0}
+.marquee-track{display:flex;gap:2.6rem;white-space:nowrap;animation:mq 30s linear infinite;width:max-content}
+.marquee span{font-family:'DM Serif Display',serif;font-size:1.05rem;letter-spacing:.04em}
+.marquee i{color:#f0c569;font-style:normal}
+@keyframes mq{to{transform:translateX(-50%)}}
+section{padding:4.4rem 0}
+.sec-head{max-width:680px;margin-bottom:2.1rem}
+.sec-head .kicker{color:var(--red2);font-weight:800;letter-spacing:.22em;text-transform:uppercase;font-size:.74rem}
+.sec-head h2{font-size:clamp(2rem,4vw,2.9rem);line-height:1.08;margin:.35rem 0 .55rem}
+.sec-head p{color:var(--muted)}
+.sig-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem}
+.sig{background:var(--card);border:1px solid var(--line);border-radius:20px;overflow:hidden;display:flex;flex-direction:column;min-width:0;transition:.2s}
+.sig:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:var(--line2)}
+.sig .ph{position:relative}
+.sig .ph img{width:100%;height:210px;object-fit:cover}
+.sig .tag{position:absolute;top:.8rem;left:.8rem;background:var(--green);color:#fff;font-size:.7rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;border-radius:999px;padding:.3rem .7rem}
+.sig .bd{padding:1.15rem 1.2rem 1.25rem;display:flex;flex-direction:column;gap:.4rem;flex:1}
+.sig h3{font-size:1.4rem;line-height:1.12}
+.sig p{color:var(--muted);font-size:.92rem;flex:1}
+.sig .row{display:flex;align-items:center;justify-content:space-between;padding-top:.55rem;gap:.6rem}
+.price{font-family:'DM Serif Display',serif;font-size:1.05rem;color:var(--green2);font-style:italic}
+.add-btn{background:var(--red);color:#fff;border:none;width:40px;height:40px;border-radius:50%;font-size:1.35rem;font-weight:800;cursor:pointer;display:grid;place-items:center;line-height:1;flex:none}
+.add-btn:hover{background:var(--green)}
+.about-sec{background:var(--bg2);border-block:1px solid var(--line)}
+.about{display:grid;grid-template-columns:.95fr 1.05fr;gap:2.6rem;align-items:center}
+.about-img{border-radius:20px;overflow:hidden;box-shadow:var(--shadow);border:1px solid var(--line)}
+.about-img img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/3.2}
+.about-points{display:grid;gap:.95rem;margin-top:1.3rem}
+.about-points li{list-style:none;display:flex;gap:.75rem;align-items:flex-start;min-width:0}
+.about-points .dot{width:27px;height:27px;flex:none;border-radius:50%;background:rgba(30,92,64,.12);border:1px solid var(--green);color:var(--green);display:grid;place-items:center;font-size:.85rem;margin-top:.08rem}
+.about-points p{color:var(--muted);font-size:.95rem}
+.about-points b{color:var(--ink)}
+.tabs{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1.6rem}
+.tab{border:1.5px solid var(--line2);background:transparent;color:var(--ink2);border-radius:999px;padding:.52rem 1.05rem;font:inherit;font-weight:800;font-size:.9rem;cursor:pointer;transition:.15s}
+.tab:hover{border-color:var(--red);color:var(--red2)}
+.tab.on{background:var(--red);border-color:var(--red);color:#fff}
+.cat-banner{border-radius:18px;overflow:hidden;margin-bottom:1.4rem;position:relative;box-shadow:var(--shadow);border:1px solid var(--line)}
+.cat-banner img{width:100%;height:200px;object-fit:cover}
+.cat-banner figcaption{position:absolute;left:0;right:0;bottom:0;padding:2.2rem 1.25rem .95rem;color:#fff;font-family:'DM Serif Display',serif;font-size:1.6rem;background:linear-gradient(transparent,rgba(18,12,4,.85))}
+.dish-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(258px,1fr));gap:1rem}
+.dish{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:1.05rem 1.12rem;display:flex;flex-direction:column;gap:.32rem;transition:.15s;min-width:0}
+.dish:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:var(--line2)}
+.dish h3{font-size:1.3rem;line-height:1.15}
+.dish p{color:var(--muted);font-size:.88rem;flex:1}
+.dish .row{margin-top:auto;display:flex;align-items:center;justify-content:space-between;padding-top:.5rem;gap:.6rem}
+.dish .pop{font-size:.66rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#fff;background:var(--gold);border-radius:999px;padding:.22rem .6rem;align-self:flex-start;color:#26221b}
+.note{margin-top:1.5rem;font-size:.86rem;color:var(--muted);border-left:3px solid var(--green);padding-left:.9rem}
+.gal{display:grid;grid-template-columns:repeat(4,1fr);gap:.8rem}
+.gal figure{border-radius:16px;overflow:hidden;border:1px solid var(--line);min-width:0}
+.gal img{width:100%;height:100%;object-fit:cover;aspect-ratio:1;transition:.4s}
+.gal figure:hover img{transform:scale(1.05)}
+.gal .wide{grid-column:span 2}
+.gal .wide img{aspect-ratio:2/1.02}
+.visit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.visit{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:1.45rem;min-width:0}
+.visit .ic{font-size:1.5rem;margin-bottom:.5rem}
+.visit h3{font-size:1.4rem;margin-bottom:.3rem}
+.visit p{color:var(--muted);font-size:.94rem}
+.visit a.map{color:var(--green2);font-weight:700;text-decoration:none}
+.visit a.map:hover{text-decoration:underline}
+footer{background:var(--ink);color:#d8c39a;padding:3.2rem 0 7rem}
+.ft{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:2rem}
+footer h4{color:#fff;font-family:'DM Serif Display',serif;font-size:1.3rem;margin-bottom:.6rem;font-weight:400}
+footer a{color:#d8c39a;text-decoration:none}
+footer a:hover{color:#f0c569}
+.ft small{display:block;margin-top:1.6rem;color:#a68d63;line-height:1.5}
+.fb-fab{position:fixed;right:18px;bottom:26px;z-index:70;width:58px;height:58px;border-radius:50%;background:var(--red);color:#fff;display:grid;place-items:center;box-shadow:0 14px 34px rgba(0,0,0,.35);text-decoration:none;border:2px solid rgba(255,255,255,.4);font-family:'DM Serif Display',serif;font-size:1.5rem}
+.qr-sec{text-align:center}
+.qr-sec .eyebrow{color:var(--green2);letter-spacing:.22em;font-size:.72rem;font-weight:800;text-transform:uppercase}
+.qr-sec h2{font-family:'DM Serif Display',serif;font-size:clamp(1.9rem,5.5vw,2.7rem);margin:.5rem 0 .7rem}
+.qr-sec p{color:var(--muted);max-width:560px;margin:0 auto;line-height:1.6}
+.qr-card{display:inline-block;background:#fff;border-radius:20px;padding:20px 20px 14px;margin-top:1.6rem;box-shadow:var(--shadow);border:1px solid var(--line);max-width:82vw}
+.qr-card img{width:210px;max-width:100%;height:auto;display:block}
+.qr-card b{display:block;color:var(--ink);font-size:.8rem;letter-spacing:.14em;margin-top:.6rem}
+.qr-card small{display:block;color:var(--muted);font-size:.72rem;letter-spacing:.08em}
+.mobilebar{position:fixed;left:0;right:0;bottom:0;z-index:65;background:rgba(253,248,238,.97);border-top:1px solid var(--line2);display:none;padding:.55rem .7rem calc(.55rem + env(safe-area-inset-bottom));gap:.55rem;align-items:stretch}
+.mobilebar a,.mobilebar button{flex:1;min-width:0}
+.mobilebar .btn{width:100%;padding:.68rem .3rem;font-size:.86rem;white-space:nowrap;gap:.35rem}
+.mobilebar .tot{display:flex;flex-direction:column;justify-content:center;align-items:center;background:var(--ink);border-radius:999px;padding:.3rem .5rem;flex:1;min-width:0;color:#fff;border:none;cursor:pointer;font:inherit}
+.mobilebar .tot small{font-size:.6rem;color:#e8cf9e;letter-spacing:.1em;text-transform:uppercase;font-weight:700}
+.mobilebar .tot b{font-family:'DM Serif Display',serif;font-size:1.12rem;line-height:1;color:#fff}
+.overlay{position:fixed;inset:0;background:rgba(24,18,8,.55);z-index:80;opacity:0;pointer-events:none;transition:.25s}
+.overlay.open{opacity:1;pointer-events:auto}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(430px,94vw);background:var(--bg);z-index:90;transform:translateX(105%);transition:.3s;display:flex;flex-direction:column;box-shadow:-20px 0 60px rgba(0,0,0,.3);border-left:1px solid var(--line)}
+.drawer.open{transform:none}
+.drawer header{padding:1.1rem 1.2rem;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line)}
+.drawer header h3{font-size:1.45rem}
+.close-x{background:none;border:none;font-size:1.6rem;cursor:pointer;color:var(--ink);line-height:1}
+.drawer .items{flex:1;overflow-y:auto;padding:1rem 1.2rem;display:flex;flex-direction:column;gap:.8rem}
+.citem{display:flex;gap:.7rem;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:.6rem .7rem}
+.citem .nm{flex:1;min-width:0}
+.citem .nm b{display:block;font-size:.93rem;line-height:1.25}
+.citem .nm span{color:var(--red2);font-weight:700;font-size:.88rem}
+.qty{display:flex;align-items:center;gap:.35rem;flex:none}
+.qty button{width:28px;height:28px;border-radius:50%;border:1.5px solid var(--line2);background:transparent;color:var(--ink);cursor:pointer;font-weight:800;line-height:1}
+.qty b{min-width:18px;text-align:center}
+.empty{color:var(--muted);text-align:center;padding:2rem 0}
+.drawer .form{border-top:1px solid var(--line);padding:1rem 1.2rem 1.2rem;background:var(--card)}
+.drawer .total-row{display:flex;justify-content:space-between;font-family:'DM Serif Display',serif;font-size:1.3rem;margin:.75rem 0}
+.drawer .checkout{width:100%;justify-content:center;font-size:1.02rem;padding:.85rem;margin-bottom:.55rem}
+.drawer .alt{width:100%;justify-content:center}
+.drawer .hint{font-size:.8rem;color:var(--muted);text-align:center;margin-top:.55rem}
+.toast{position:fixed;left:50%;bottom:112px;transform:translate(-50%,20px);background:var(--green);color:#fff;padding:.6rem 1.1rem;border-radius:999px;font-size:.9rem;font-weight:800;opacity:0;pointer-events:none;transition:.25s;z-index:120;max-width:92vw;text-align:center}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+@media(max-width:900px){
+  nav.main{display:none}
+  .hd{gap:.6rem}
+  .hd-actions .btn-green{display:none}
+  .cart-btn{padding:.55rem .8rem;font-size:.9rem}
+  .logo b{font-size:1.05rem}
+  .logo small{font-size:.52rem;letter-spacing:.14em}
+  .logo-mark{width:40px;height:40px;font-size:1.2rem}
+  .sig-grid{grid-template-columns:1fr}
+  .about{grid-template-columns:1fr}
+  .visit-grid{grid-template-columns:1fr}
+  .gal{grid-template-columns:repeat(2,1fr)}
+  .ft{grid-template-columns:1fr}
+  .mobilebar{display:flex}
+  .fb-fab{display:none}
+  .hero{min-height:86svh}
+  section{padding:3.3rem 0}
+}
+</style>
+<script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
+<script defer src="/_vercel/insights/script.js"></script>
+</head>
+<body>
+<div class="demo-ribbon">Demo website — <b>Salvatore's Prime Sandwiches</b> · Preview</div>
+
+<header class="site">
+  <div class="wrap hd">
+    <a class="logo" href="#top">
+      <span class="logo-mark">S</span>
+      <span><b>Salvatore's Prime</b><small>Italian Deli · College Park</small></span>
+    </a>
+    <nav class="main">
+      <a href="#menu">Menu</a>
+      <a href="#story">Our Story</a>
+      <a href="#visit">Visit</a>
+    </nav>
+    <div class="hd-actions">
+      <a class="btn btn-green" href="https://www.facebook.com/1714228898613520/" target="_blank" rel="noopener">Facebook</a>
+      <button class="cart-btn" id="cartOpen" aria-label="Open your order list">Your Order <span class="cart-count" id="cartCount">0</span></button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="hero-bg"><img src="https://images.unsplash.com/photo-1509722747041-616f39b57569?q=80&w=1600&auto=format&fit=crop" alt="Stacked Italian deli sandwich at Salvatore's Prime Sandwiches, Orlando"></div>
+    <div class="wrap hero-in">
+      <div class="kicker">Italian Deli · College Park, Orlando</div>
+      <h1>Sliced to order. <em>Piled high.</em></h1>
+      <p>Salvatore's Prime Sandwiches builds Italian-inspired sandwiches the deli way — Boar's Head meats and cheeses, sliced fresh in front of you, stacked the way a sandwich should be.</p>
+      <div class="hero-cta">
+        <a class="btn btn-red" href="#menu">See the Menu</a>
+        <a class="btn btn-green" href="https://www.facebook.com/1714228898613520/" target="_blank" rel="noopener">Follow on Facebook</a>
+      </div>
+      <div class="hero-badges">
+        <span class="hbadge">🥩 Boar's Head · sliced on site</span>
+        <span class="hbadge">🥪 Toasted, panini or classic</span>
+        <span class="hbadge">📍 1520 Edgewater Dr, Ste J</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="marquee" aria-hidden="true"><div class="marquee-track" id="mq"></div></div>
+
+  <section>
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="kicker">House Favorites</div>
+        <h2>The sandwiches College Park lines up for</h2>
+        <p>Tap + to build your order list, then reach the shop through its Facebook page — that's where Salvatore's posts its specials and takes its community's orders.</p>
+      </div>
+      <div class="sig-grid" id="sigGrid"></div>
+    </div>
+  </section>
+
+  <section id="menu" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="kicker">Menu</div>
+        <h2>From the deli counter</h2>
+        <p>Tap <b>+</b> to add a sandwich to your list — show it at the counter when you arrive.</p>
+      </div>
+      <div class="tabs" id="tabs"></div>
+      <figure class="cat-banner" id="catBanner"><img id="catImg" src="" alt=""><figcaption id="catName"></figcaption></figure>
+      <div class="dish-grid" id="dishGrid"></div>
+      <p class="note">Salvatore's runs its menu from the counter and its Facebook page — weekly specials (like the Pizza Sub and the Spicy Pastrami) are posted there first, and prices are posted at the counter. Check the Facebook page for this week's special before you go.</p>
+    </div>
+  </section>
+
+  <section class="about-sec" id="story">
+    <div class="wrap about">
+      <div class="about-img"><img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=1000&auto=format&fit=crop" alt="Deli counter service" loading="lazy"></div>
+      <div>
+        <div class="sec-head" style="margin-bottom:0">
+          <div class="kicker">Our Story</div>
+          <h2>From Henry's Depot to College Park</h2>
+          <p>Salvatore's Prime Sandwiches first won its following inside Henry's Depot in downtown Sanford, then opened its own College Park restaurant on Edgewater Drive on February 7, 2025. The formula never changed: Italian-inspired sandwiches made with only Boar's Head meats and cheeses, sliced to order and piled high.</p>
+        </div>
+        <ul class="about-points">
+          <li><span class="dot">✓</span><p><b>Boar's Head only</b> — every meat and cheese on the board, sliced fresh on site.</p></li>
+          <li><span class="dot">✓</span><p><b>Your way</b> — toasted, open-faced, panini or classic, or build your own.</p></li>
+          <li><span class="dot">✓</span><p><b>Lighter options too</b> — Italian-style salads made with organic greens, plus gluten-free and carb-conscious choices.</p></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="kicker">Gallery</div>
+        <h2>Stacked, sliced, served</h2>
+      </div>
+      <div class="gal">
+        <figure class="wide"><img src="https://images.unsplash.com/photo-1509722747041-616f39b57569?q=80&w=1000&auto=format&fit=crop" alt="Italian sandwich, close up" loading="lazy"></figure>
+        <figure><img src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?q=80&w=700&auto=format&fit=crop" alt="Deli sandwich on a board" loading="lazy"></figure>
+        <figure><img src="https://images.unsplash.com/photo-1550507992-eb63ffee0847?q=80&w=700&auto=format&fit=crop" alt="Fresh sandwich ingredients" loading="lazy"></figure>
+        <figure><img src="https://images.unsplash.com/photo-1475090169767-40ed8d18f67d?q=80&w=700&auto=format&fit=crop" alt="Sliced deli meats" loading="lazy"></figure>
+        <figure><img src="https://images.unsplash.com/photo-1482049016688-2d3e1b31122b?q=80&w=700&auto=format&fit=crop" alt="Sandwich and salad plate" loading="lazy"></figure>
+        <figure><img src="https://images.unsplash.com/photo-1541518763669-27fef04b14ea?q=80&w=700&auto=format&fit=crop" alt="Toasted panini" loading="lazy"></figure>
+        <figure class="wide"><img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=1000&auto=format&fit=crop" alt="Counter service at a deli" loading="lazy"></figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="visit" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="kicker">Visit</div>
+        <h2>Find the deli</h2>
+      </div>
+      <div class="visit-grid">
+        <div class="visit">
+          <div class="ic">📍</div>
+          <h3>Address</h3>
+          <p>1520 Edgewater Dr, Ste J<br>Orlando, FL 32804<br>College Park</p>
+          <p style="margin-top:.6rem"><a class="map" href="https://www.google.com/maps/search/?api=1&query=Salvatore%27s+Prime+Sandwiches+1520+Edgewater+Dr+Orlando+FL+32804" target="_blank" rel="noopener">Get directions →</a></p>
+        </div>
+        <div class="visit">
+          <div class="ic">🕚</div>
+          <h3>Hours</h3>
+          <p><b style="color:var(--ink)">Mon – Sat</b> — 11:00 AM to 8:00 PM<br><b style="color:var(--ink)">Sunday</b> — 11:00 AM to 3:00 PM</p>
+          <p style="margin-top:.5rem">Hours as posted by the shop on its Facebook page at opening. Holiday hours are posted there too.</p>
+        </div>
+        <div class="visit">
+          <div class="ic">💬</div>
+          <h3>Contact</h3>
+          <p>Salvatore's runs everything through its Facebook page — specials, hours and community news land there first:</p>
+          <p style="margin-top:.55rem"><a class="map" href="https://www.facebook.com/1714228898613520/" target="_blank" rel="noopener">Facebook — Salvatore's Prime Sandwiches →</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<section class="qr-sec" id="tables">
+  <div class="wrap">
+    <div class="eyebrow">Included with your website</div>
+    <h2>A QR code on every table</h2>
+    <p>Guests scan the card on their table and the menu opens on their phone — no searching, no typing. Printed table QR cards are included with your site. This one already works: scan it, it opens this very page.</p>
+    <div class="qr-card">
+      <img src="qr-salvatores-prime-sandwiches.png" alt="QR code opening the Salvatore's Prime Sandwiches website">
+      <b>SALVATORE'S PRIME SANDWICHES · ORLANDO</b>
+      <small>SCAN FOR THE MENU</small>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap ft">
+    <div>
+      <h4>Salvatore's Prime Sandwiches</h4>
+      <p>College Park's Italian-American deli — Boar's Head meats and cheeses sliced to order, sandwiches piled high, and a weekly special worth following on Facebook.</p>
+      <small>Demo website created for presentation purposes. Photos: Unsplash (illustrative). Menu items as described by the shop's Facebook posts, Historic Downtown Sanford and Orlando Date Night Guide, November 2026 — prices are posted at the counter; please confirm on Facebook.</small>
+    </div>
+    <div>
+      <h4>Visit</h4>
+      <p>1520 Edgewater Dr, Ste J<br>Orlando, FL 32804<br>Mon–Sat 11 AM–8 PM · Sun 11 AM–3 PM</p>
+    </div>
+    <div>
+      <h4>Quick Links</h4>
+      <p>
+        <a href="#menu">Menu</a><br>
+        <a href="https://www.facebook.com/1714228898613520/" target="_blank" rel="noopener">Facebook — Salvatore's Prime Sandwiches</a><br>
+        <a href="https://www.google.com/maps/search/?api=1&query=Salvatore%27s+Prime+Sandwiches+1520+Edgewater+Dr+Orlando+FL+32804" target="_blank" rel="noopener">Directions</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+<a class="fb-fab" href="https://www.facebook.com/1714228898613520/" target="_blank" rel="noopener" aria-label="Salvatore's on Facebook">f</a>
+
+<div class="mobilebar">
+  <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&query=Salvatore%27s+Prime+Sandwiches+1520+Edgewater+Dr+Orlando+FL+32804" target="_blank" rel="noopener">Directions</a>
+  <a class="btn btn-red" href="https://www.facebook.com/1714228898613520/" target="_blank" rel="noopener">Facebook</a>
+  <button class="tot" data-open-cart><small>Your order</small><b id="mbTotal">0 items</b></button>
+</div>
+
+<div class="overlay" id="overlay"></div>
+<aside class="drawer" id="drawer" aria-label="Your order list">
+  <header>
+    <h3>Your Order</h3>
+    <button class="close-x" id="cartClose" aria-label="Close">×</button>
+  </header>
+  <div class="items" id="cartItems"></div>
+  <div class="form">
+    <div class="total-row"><span>Sandwiches &amp; more</span><span id="drawerTotal">0</span></div>
+    <a class="btn btn-red checkout" href="https://www.facebook.com/1714228898613520/" target="_blank" rel="noopener">Order via Facebook — Salvatore's Prime</a>
+    <a class="btn btn-ghost alt" href="https://www.google.com/maps/search/?api=1&query=Salvatore%27s+Prime+Sandwiches+1520+Edgewater+Dr+Orlando+FL+32804" target="_blank" rel="noopener">Get directions instead</a>
+    <p class="hint">Show this list at the counter on Edgewater Dr — prices are posted there, and the week's special is on Facebook.</p>
+  </div>
+</aside>
+
+<div class="toast" id="toast">Added to your order ✓</div>
+
+<script>
+const IMG = {
+  classics:"https://images.unsplash.com/photo-1509722747041-616f39b57569?q=80&w=1100&auto=format&fit=crop",
+  more:"https://images.unsplash.com/photo-1528735602780-2552fd46c7af?q=80&w=1100&auto=format&fit=crop"
+};
+/* Menu names & compositions: shop's Facebook posts (via findglocal), Historic Downtown Sanford, Orlando Date Night Guide — no public price list, prices at the counter */
+const CATS = [
+ {cat:"House Sandwiches", img:"classics", items:[
+   {name:"The Classic Italian", desc:"Prosciutto, Genoa salami and Tavern ham with provolone, field greens, sliced tomato, oil & vinegar and garlic aioli — the sandwich that built the following.", flag:"pop", tag:"The Favorite"},
+   {name:"London Broil Roast Beef", desc:"London broil roast beef and provolone with a little horseradish sauce — a tangy, creamy bite.", flag:"pop", tag:"House Favorite"},
+   {name:"The Tuscany", desc:"Fresh prosciutto and fresh mozzarella — delectable, in the words of Orlando Date Night Guide.", tag:"Fresh"},
+   {name:"The Blue Bird", desc:"A popular lunch choice at the counter — ask the deli what makes it sing today.", tag:"Lunch Pick"}]},
+ {cat:"Specials & More", img:"more", items:[
+   {name:"The Pizza Sub", desc:"RAO's pizza sauce, Tavern ham, Genoa salami, pepperoni, provolone & mozzarella, grilled onions and banana peppers. A Facebook-posted special — catch it when it runs.", flag:"pop", tag:"Special"},
+   {name:"Spicy Pastrami", desc:"The special that turns heads in College Park — pastrami with a kick, posted by the shop on Facebook.", tag:"Special"},
+   {name:"Build Your Own", desc:"Pick your Boar's Head meats and cheeses and get creative — toasted, open-faced, panini or classic.", tag:"Your Way"},
+   {name:"Italian-Style Salads", desc:"Made with organic greens — the lighter side of the deli case, gluten-free and carb-conscious friendly.", tag:"Fresh"}]}
+];
+const SIGNATURES = [
+ {name:"The Classic Italian", img:"https://images.unsplash.com/photo-1509722747041-616f39b57569?q=80&w=900&auto=format&fit=crop", desc:"Prosciutto, Genoa salami, Tavern ham and provolone with garlic aioli — thin-sliced, layered, unforgettable.", tag:"The Favorite", note:"Boar's Head · sliced to order"},
+ {name:"London Broil Roast Beef", img:"https://images.unsplash.com/photo-1550507992-eb63ffee0847?q=80&w=900&auto=format&fit=crop", desc:"Roast beef and provolone with a little horseradish sauce — savory with a gentle kick.", tag:"House Favorite", note:"Horseradish sauce"},
+ {name:"The Tuscany", img:"https://images.unsplash.com/photo-1528735602780-2552fd46c7af?q=80&w=900&auto=format&fit=crop", desc:"Fresh prosciutto and fresh mozzarella — simple, authentic Italian flavors.", tag:"Fresh", note:"Prosciutto · mozzarella"}
+];
+
+const cart = new Map();
+const $ = s => document.querySelector(s);
+const tabsEl = $("#tabs"), gridEl = $("#dishGrid");
+let currentCat = CATS[0].cat;
+
+CATS.forEach(c=>{
+  const b=document.createElement("button");
+  b.className="tab"+(c.cat===currentCat?" on":"");
+  b.textContent=c.cat;
+  b.onclick=()=>{currentCat=c.cat;document.querySelectorAll(".tab").forEach(t=>t.classList.toggle("on",t.textContent===c.cat));renderCat();};
+  tabsEl.appendChild(b);
+});
+
+function esc(s){return s.replace(/'/g,"\\'")}
+function dishCard(it){
+  const pop = it.flag==="pop" ? `<span class="pop">★ ${it.tag||"Popular"}</span>` : "";
+  return `<article class="dish">${pop}<h3>${it.name}</h3><p>${it.desc||""}</p>
+    <div class="row"><div class="price">at the counter</div>
+    <button class="add-btn" title="Add to your order" onclick="addItem('${esc(it.name)}')">+</button></div></article>`;
+}
+function renderCat(){
+  const c = CATS.find(x=>x.cat===currentCat);
+  $("#catImg").src = IMG[c.img];
+  $("#catName").textContent = c.cat;
+  gridEl.innerHTML = c.items.map(dishCard).join("");
+}
+$("#sigGrid").innerHTML = SIGNATURES.map(s=>`
+  <article class="sig">
+    <div class="ph"><img src="${s.img}" alt="${s.name}" loading="lazy"><span class="tag">${s.tag}</span></div>
+    <div class="bd"><h3>${s.name}</h3><p>${s.desc}</p>
+    <div class="row"><div class="price">${s.note}</div>
+    <button class="add-btn" title="Add to your order" onclick="addItem('${esc(s.name)}')">+</button></div></div>
+  </article>`).join("");
+
+function addItem(name){
+  if(cart.has(name)) cart.get(name).qty++;
+  else cart.set(name,{name,qty:1});
+  updateCart(); showToast(name+" — added ✓");
+}
+function cartQty(){let q=0;cart.forEach(i=>q+=i.qty);return q}
+function updateCart(){
+  $("#cartCount").textContent = cartQty();
+  $("#mbTotal").textContent = cartQty() + (cartQty()===1?" item":" items");
+  $("#drawerTotal").textContent = cartQty();
+  const box = $("#cartItems");
+  if(cart.size===0){box.innerHTML='<p class="empty">Nothing yet.<br>Add a sandwich to plan your visit 🥪</p>';return}
+  box.innerHTML="";
+  cart.forEach(i=>{
+    const d=document.createElement("div");d.className="citem";
+    d.innerHTML=`<div class="nm"><b>${i.name}</b><span>order at the counter</span></div>
+      <div class="qty"><button onclick="chQty('${esc(i.name)}',-1)">−</button><b>${i.qty}</b><button onclick="chQty('${esc(i.name)}',1)">+</button></div>`;
+    box.appendChild(d);
+  });
+}
+function chQty(name,d){
+  const i=cart.get(name); if(!i) return;
+  i.qty+=d; if(i.qty<=0) cart.delete(name);
+  updateCart();
+}
+function openCart(){$("#drawer").classList.add("open");$("#overlay").classList.add("open")}
+function closeCart(){$("#drawer").classList.remove("open");$("#overlay").classList.remove("open")}
+$("#cartOpen").onclick=openCart;
+$("#cartClose").onclick=closeCart;
+$("#overlay").onclick=closeCart;
+document.querySelectorAll("[data-open-cart]").forEach(b=>b.onclick=openCart);
+
+let toastTimer;
+function showToast(t){const el=$("#toast");el.textContent=t;el.classList.add("show");clearTimeout(toastTimer);toastTimer=setTimeout(()=>el.classList.remove("show"),1800)}
+
+const mqItems = ["Boar's Head · sliced to order","Classic Italian","London Broil Roast Beef","The Tuscany","Pizza Sub specials on Facebook","College Park · Edgewater Dr"];
+const seq = mqItems.map(t=>`<span>${t}</span><i>✦</i>`).join("");
+$("#mq").innerHTML = seq + seq;
+
+renderCat(); updateCart();
+</script>
+</body>
+</html>
